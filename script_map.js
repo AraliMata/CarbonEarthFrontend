@@ -156,12 +156,12 @@ const municipios = {
     // wire up the button
     const selectBox = document.getElementById("chiapas");
   
-    /*google.maps.event.addDomListener(selectBox, "change", () => {
-      //clearCensusData();
+    google.maps.event.addDomListener(selectBox, "change", () => {
+      clearData();
       console.log("Seleccionó municipio");
       //loadCensusData(selectBox.options[selectBox.selectedIndex].value);
       //cargarMunicipios();
-    });*/
+    });
     // state polygons only need to be loaded once, do them now
     
   }
@@ -278,14 +278,14 @@ const municipios = {
   }
   
   /** Removes census data from each shape on the map and resets the UI. */
-  function clearCensusData() {
-    censusMin = Number.MAX_VALUE;
-    censusMax = -Number.MAX_VALUE;
-    map.data.forEach((row) => {
-      row.setProperty("datos", undefined);
-    });
-    document.getElementById("data-box").style.display = "none";
-    document.getElementById("data-caret").style.display = "none";
+  function clearData() {
+    
+    document.getElementById("mun").style.display = "none";
+    document.getElementById("uno").textContent = bsp6.toLocaleString();
+    document.getElementById("dos").textContent = bss6.toLocaleString();
+    document.getElementById("tres").textContent = hf.toLocaleString();
+    document.getElementById("cuatro").textContent = ce.toLocaleString();
+    document.getElementById("cinco").textContent = rc.toLocaleString();
   }
   
   /**
